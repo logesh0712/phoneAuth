@@ -1,11 +1,14 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View, LogBox } from 'react-native';
+import Otp from './src';
 
 export default function App() {
+  //console.disableYellowBox = true;
+  LogBox.ignoreLogs(['Warning: ...']);
+  LogBox.ignoreAllLogs();
+
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <Otp></Otp>
     </View>
   );
 }
@@ -13,8 +16,5 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
   },
 });
